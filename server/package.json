@@ -1,0 +1,10 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.1.0",
+    "socketio": "^1.0.0"
+  }
+}
