@@ -1,15 +1,15 @@
 const Hapi = require('hapi')
-const Socket = require('socket.io')
+const io = require('socket.io')
 
 const server = new Hapi.Server()
 
 server.connection({port: 3000, host: 'localhost'})
 
-io = Socket(server.listener)
-io.on('connection', socket => {
-  socket.emit('working')
+socket = io(server.listener)
+socket.on('connection', socket => {
+  console.log('connected');
   socket.on('test', () => {
-    socket.emit('I live!')
+    socket.emit('tested', {msg: 'Did you get it?'})
   })
 })
 
